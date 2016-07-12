@@ -49,7 +49,7 @@ class PhPyCli(wx.Frame):
         _icon = wx.EmptyIcon()
         _icon.CopyFromBitmap(wx.Bitmap(WAI + "/icons/ppc-32x32.png", wx.BITMAP_TYPE_ANY))
         self.SetIcon(_icon)
-        self.SetSize((1024, 780))
+        self.SetSize((1024, 640))
         self.statusbar.SetStatusWidths([-1, -1])
         statusbar_fields = ["infos", "timer"]
         for i in range(len(statusbar_fields)):
