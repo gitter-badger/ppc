@@ -1,13 +1,13 @@
-#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
-import wx
-import wx.aui
-from core import editor
 
 from os import path
 
-WAI = path.abspath(path.dirname(__file__))
+import wx
+import wx.aui
+
+import editor
+
+CWD = path.abspath(path.dirname('__main__'))
 
 
 class PhPyCli(wx.Frame):
@@ -23,7 +23,6 @@ class PhPyCli(wx.Frame):
         top_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
         self.nb = wx.aui.AuiNotebook(self)
-        #page = wx.TextCtrl(self.nb, -1, '<?php\n\n?>\n', style=wx.TE_MULTILINE)
         page = editor.Editor(self, -1)
         page.SetText("<?php\n\n?>\n")
         self.nb.AddPage(page, "sans titre")
@@ -47,7 +46,7 @@ class PhPyCli(wx.Frame):
     def __set_properties(self):
         self.SetTitle("PhPyCli")
         _icon = wx.EmptyIcon()
-        _icon.CopyFromBitmap(wx.Bitmap(WAI + "/icons/ppc-32x32.png", wx.BITMAP_TYPE_ANY))
+        _icon.CopyFromBitmap(wx.Bitmap(CWD + path.sep + "icons/ppc-32x32.png", wx.BITMAP_TYPE_ANY))
         self.SetIcon(_icon)
         self.SetSize((1024, 640))
         self.statusbar.SetStatusWidths([-1, -1])
@@ -62,6 +61,3 @@ def main():
     app.SetTopWindow(main_window)
     main_window.Show()
     app.MainLoop()
-
-if __name__ == '__main__':
-	main()

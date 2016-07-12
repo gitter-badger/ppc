@@ -3,12 +3,14 @@
 
 from os import path
 
-WAI = path.abspath(path.dirname(__file__))
+from core import phpycli
+
+#WAI = path.abspath(path.dirname(__file__))
 
 
 def main():
-	print(WAI)
+    new_ppc = phpycli.main()
 
 if __name__ == '__main__':
-	main()
+    main()
 
