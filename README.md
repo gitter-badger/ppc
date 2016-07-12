@@ -1,5 +1,7 @@
 # ppc
 
+[![Join the chat at https://gitter.im/idealtitude/ppc](https://badges.gitter.im/idealtitude/ppc.svg)](https://gitter.im/idealtitude/ppc?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 PhPyCli v2 !
 ====
 
