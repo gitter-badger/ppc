@@ -5,8 +5,7 @@ import  wx.stc  as  stc
 
 from os import path
 
-WAI = path.abspath(path.dirname(__file__))
-print '1' + WAI
+CWD = path.abspath(path.dirname('__main__'))
 
 
 class Editor(stc.StyledTextCtrl):
@@ -68,7 +67,7 @@ class Editor(stc.StyledTextCtrl):
 
         self.SetLexer(stc.STC_LEX_HTML)
 
-        datas_path = '../datas'
+        datas_path = CWD + '/datas'
         php_lex = datas_path + '/lex_php.json'
         #php_funx = datas_path + '/funx_php.json'
 
@@ -82,4 +81,3 @@ class Editor(stc.StyledTextCtrl):
 
         for i in datas['keywords']:
             self.SetKeyWords(int(i['index']), str(i['value']))
-
